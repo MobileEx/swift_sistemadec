@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Autenticacion" representedClassName=".Autenticacion" syncable="YES">
+        <attribute name="clave" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Configuracion" representedClassName=".Configuracion" syncable="YES">
+        <attribute name="cdbFin" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cdbPri" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cdbSec" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="claveActual" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="direccion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ext" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fax" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mark" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pais" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="principioPedido" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="reffLet" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reffNum" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="reffSecNum" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="reffSup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="refLet" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="refNum" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="refSecNum" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="rnc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="secuenciaconfirmacion" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="secuenciaPedido" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="telefono" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tipo" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Detalle" representedClassName=".Detalle" syncable="YES">
+        <attribute name="cantidaDecajas" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cantidadTotal" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="enviado" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="numeroDePedido" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="precioDeVenta" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="totalcbm" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="ref" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Referencia" inverseName="det" inverseEntity="Referencia" syncable="YES"/>
+        <relationship name="via" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Viaje" inverseName="det" inverseEntity="Viaje" syncable="YES"/>
+    </entity>
+    <entity name="Inventario" representedClassName=".Inventario" syncable="YES">
+        <attribute name="inventarioGeneral" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ref" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Referencia" inverseName="inv" inverseEntity="Referencia" syncable="YES"/>
+    </entity>
+    <entity name="Pedidohistorico" representedClassName="Pedidohistorico" syncable="YES">
+        <attribute name="cajas" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cantidadencaja" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cantidadtotal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fecha" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="moneda" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numerodepedido" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="precio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="preciodeventa" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="referencia" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Referencia" representedClassName=".Referencia" syncable="YES">
+        <attribute name="caja" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="calle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cantidadEnCaja" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="categoria" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cbm" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cbmtotal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="codigoDeBarra" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="colores" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coloresPorciento" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="confirmacion" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="descripcion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="empaqueConMadera" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fabrica" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="formaDeEmpaque" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="foto1" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="foto2" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="foto3" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="fotoDeTargeta" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="fotoReferencia" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fotoReferencia2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="libras" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="llevaPocientoAdicional" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="llevaSelectivo" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="local" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombreDeFoto1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombreDefoto2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombreDeFoto3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombreDeFotoTargeta" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="observacion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="porcientoAdicional" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ppv" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="precioRmb" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="precioUsd" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="referencia" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="savedRefLet" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="savedRefNum" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="suplidor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tamanoencm" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="det" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Detalle" inverseName="ref" inverseEntity="Detalle" syncable="YES"/>
+        <relationship name="inv" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Inventario" inverseName="ref" inverseEntity="Inventario" syncable="YES"/>
+        <relationship name="via" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Viaje" inverseName="ref" inverseEntity="Viaje" syncable="YES"/>
+    </entity>
+    <entity name="Viaje" representedClassName=".Viaje" syncable="YES">
+        <attribute name="aduanaMasGastos" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="fleteMaritimo" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ganaciaCumpleano" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ganaciaGeneral" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="impuestoItebis" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="materialRelleno" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nombreDelViaje" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="salarioxhora" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="selectivo" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tazaRmb" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tazaUsd" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="det" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Detalle" inverseName="via" inverseEntity="Detalle" syncable="YES"/>
+        <relationship name="ref" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Referencia" inverseName="via" inverseEntity="Referencia" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Autenticacion" positionX="-551" positionY="-1803" width="128" height="75"/>
+        <element name="Configuracion" positionX="-549" positionY="-2079" width="128" height="405"/>
+        <element name="Detalle" positionX="-189" positionY="-1800" width="128" height="180"/>
+        <element name="Inventario" positionX="-558" positionY="-1701" width="128" height="73"/>
+        <element name="Pedidohistorico" positionX="-369" positionY="-1998" width="128" height="180"/>
+        <element name="Referencia" positionX="-378" positionY="-2151" width="128" height="660"/>
+        <element name="Viaje" positionX="-209" positionY="-2079" width="128" height="240"/>
+    </elements>
+</model>
